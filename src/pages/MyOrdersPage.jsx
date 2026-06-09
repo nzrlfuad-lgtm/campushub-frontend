@@ -29,7 +29,7 @@ useEffect(() => {
     try {
 
    const res = await axios.get(
-  "http://localhost:5000/api/orders"
+  "https://campushub-backend-production-df39.up.railway.app/api/orders"
 );
 
 console.log("USER LOGIN:", user);
@@ -92,7 +92,7 @@ const filtered = res.data.filter(
   try {
 
     await axios.delete(
-      `http://localhost:5000/api/orders/${id}`
+      `https://campushub-backend-production-df39.up.railway.app/api/orders/${id}`
     );
 
     alert("Pesanan berhasil dibatalkan");

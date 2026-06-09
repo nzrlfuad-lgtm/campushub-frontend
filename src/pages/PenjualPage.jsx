@@ -75,7 +75,7 @@ const fetchOrders = async () => {
   try {
 
     const res = await axios.get(
-      "http://localhost:5000/api/orders"
+      "https://campushub-backend-production-df39.up.railway.app/api/orders"
     );
 
     console.log("DATA ORDERS:", res.data);
@@ -106,7 +106,7 @@ const fetchOrders = async () => {
       localStorage.getItem("token");
 
     await axios.put(
-      `http://localhost:5000/api/orders/${id}/status`,
+      `https://campushub-backend-production-df39.up.railway.app/api/orders/${id}/status`,
       { status },
       {
         headers: {
@@ -274,7 +274,7 @@ const handlePrint = async () => {
     );
 
     await axios.post(
-      "http://localhost:5000/api/orders",
+      "https://campushub-backend-production-df39.up.railway.app/api/orders",
       data,
       {
         headers: {
@@ -309,7 +309,7 @@ const handleJastipSubmit = async (e) => {
     data.append("sellerName", user.nim);
     data.append("sellerRealName", user.name);
     await axios.post(
-      "http://localhost:5000/api/products/add",
+      "https://campushub-backend-production-df39.up.railway.app/api/products/add",
       data
     );
 
@@ -376,7 +376,7 @@ data.append(
   localStorage.getItem("token");
 
 await axios.post(
-  "http://localhost:5000/api/products/add",
+  "https://campushub-backend-production-df39.up.railway.app/api/products/add",
   data,
   {
     headers: {
@@ -437,7 +437,7 @@ data.append(
   localStorage.getItem("token");
 
 await axios.post(
-  "http://localhost:5000/api/products/add",
+  "https://campushub-backend-production-df39.up.railway.app/api/products/add",
   data,
   {
     headers: {
@@ -636,7 +636,7 @@ const [productTab, setProductTab] =
   try {
 
     await axios.put(
-      `http://localhost:5000/api/orders/${id}/take`,
+      `https://campushub-backend-production-df39.up.railway.app/api/orders/${id}/take`,
       {
         sellerName: user.nim,
         sellerRealName: user.name,
@@ -1203,7 +1203,7 @@ transition duration-300
           >
 
             <img
-              src={`http://localhost:5000/uploads/${product.image}`}
+              src={`https://campushub-backend-production-df39.up.railway.app/uploads/${product.image}`}
               alt=""
               className="w-full h-52 object-cover"
             />
@@ -1275,7 +1275,7 @@ transition duration-300
           >
 
             <img
-              src={`http://localhost:5000/uploads/${product.image}`}
+              src={`https://campushub-backend-production-df39.up.railway.app/uploads/${product.image}`}
               alt=""
               className="w-full h-52 object-cover"
             />
@@ -1444,7 +1444,7 @@ transition duration-300
           {order.file && (
 
             <a
-              href={`http://localhost:5000/uploads/orders/${order.file}`}
+              href={`https://campushub-backend-production-df39.up.railway.app/uploads/orders/${order.file}`}
               target="_blank"
               rel="noreferrer"
               className="

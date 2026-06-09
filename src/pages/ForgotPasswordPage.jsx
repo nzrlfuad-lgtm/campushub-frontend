@@ -23,7 +23,7 @@ function ForgotPasswordPage() {
     try {
 
       await axios.post(
-        "http://localhost:5000/api/auth/check-user",
+        "https://campushub-backend-production-df39.up.railway.app/api/auth/check-user",
         { nim }
       );
 
@@ -48,7 +48,7 @@ function ForgotPasswordPage() {
     try {
 
       const res = await axios.put(
-        "http://localhost:5000/api/auth/forgot-password",
+        "https://campushub-backend-production-df39.up.railway.app/api/auth/forgot-password",
         {
           nim,
           newPassword,

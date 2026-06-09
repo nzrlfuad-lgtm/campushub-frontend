@@ -79,7 +79,7 @@ const handleOrder = async (tool) => {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/products"
+        "https://campushub-backend-production-df39.up.railway.app/api/products"
       );
 
       const SewaalatProducts = res.data.filter(
@@ -244,7 +244,7 @@ to-[#ede9fe]
       >
 
         <img
-          src={`http://localhost:5000/uploads/${tool.image}`}
+          src={`https://campushub-backend-production-df39.up.railway.app/uploads/${tool.image}`}
           alt=""
           className="w-full h-56 object-cover"
         />

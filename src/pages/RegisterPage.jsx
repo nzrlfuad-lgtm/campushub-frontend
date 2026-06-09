@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { registerUser } from "../services/authService";
 
 function RegisterPage() {
 
@@ -23,28 +24,22 @@ function RegisterPage() {
     });
   };
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+const handleRegister = async (e) => {
+  e.preventDefault();
 
-    try {
+  try {
+    const res = await registerUser(formData);
 
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        formData
-      );
+    alert(res.message);
 
-      alert(res.data.message);
-
-      navigate("/login");
-
-    } catch (err) {
-
-      alert(
-        err.response?.data?.message ||
-        "Gagal Mendaftarkan Akun!!!"
-      );
-    }
-  };
+    navigate("/login");
+  } catch (err) {
+    alert(
+      err.response?.data?.message ||
+      "Gagal Mendaftarkan Akun!!!"
+    );
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center p-6">

@@ -55,7 +55,7 @@ useEffect(() => {
 
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/products");
+      const res = await axios.get("https://campushub-backend-production-df39.up.railway.app/api/products");
 
       setProducts(res.data);
     } catch (error) {
@@ -244,7 +244,7 @@ to-[#ede9fe]
   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
 >
   <img
-    src={`http://localhost:5000/uploads/${product.image}`}
+    src={`https://campushub-backend-production-df39.up.railway.app/uploads/${product.image}`}
     alt=""
     className="w-full h-56 object-cover"
   />
