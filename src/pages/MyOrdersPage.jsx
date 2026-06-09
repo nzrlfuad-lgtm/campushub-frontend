@@ -260,7 +260,7 @@ const filtered = res.data.filter(
 
   <div className="mt-3 bg-blue-50 p-3 rounded-xl">
     <p className="text-blue-700 font-semibold">
-      🚚 Pesanan Diambil Oleh
+      Pesanan Diambil Oleh
     </p>
 
     <p className="text-gray-700">
