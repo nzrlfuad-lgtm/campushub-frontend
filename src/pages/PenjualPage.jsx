@@ -575,7 +575,10 @@ const printProducts = myProducts.filter(
 const jastipProducts = myProducts.filter(
   (product) => product.type === "jastip"
 );
-const [editingProduct, setEditingProduct] = useState(null);
+const [editingProduct, setEditingProduct] = useState(null);useEffect(() => {
+  console.log("EDITING:", editingProduct);
+}, [editingProduct]);
+
 
 const handleUpdateProduct = async () => {
   try {
