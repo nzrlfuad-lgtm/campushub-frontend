@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   getProducts,
   deleteProduct,
+  updateProduct,
 } from "../services/productService";
 
 import {
@@ -575,6 +576,103 @@ const jastipProducts = myProducts.filter(
   (product) => product.type === "jastip"
 );
 const [editingProduct, setEditingProduct] = useState(null);
+{editingProduct && (
+  <div className="bg-white text-black rounded-3xl p-8 mb-6">
+
+    <h2 className="text-2xl font-bold mb-4">
+      Edit Produk
+    </h2>
+
+    <input
+      type="text"
+      value={editingProduct.name}
+      onChange={(e) =>
+        setEditingProduct({
+          ...editingProduct,
+          name: e.target.value,
+        })
+      }
+      className="w-full border p-3 rounded-xl mb-3"
+    />
+
+    <input
+      type="number"
+      value={editingProduct.price}
+      onChange={(e) =>
+        setEditingProduct({
+          ...editingProduct,
+          price: e.target.value,
+        })
+      }
+      className="w-full border p-3 rounded-xl mb-3"
+    />
+
+    <textarea
+      value={editingProduct.description}
+      onChange={(e) =>
+        setEditingProduct({
+          ...editingProduct,
+          description: e.target.value,
+        })
+      }
+      className="w-full border p-3 rounded-xl mb-3"
+    />
+
+    <div className="flex gap-3">
+
+      <button
+        onClick={handleUpdateProduct}
+        className="bg-blue-600 text-white px-5 py-3 rounded-xl"
+      >
+        Simpan
+      </button>
+
+      <button
+        onClick={() =>
+          setEditingProduct(null)
+        }
+        className="bg-gray-500 text-white px-5 py-3 rounded-xl"
+      >
+        Batal
+      </button>
+
+    </div>
+
+  </div>
+)}
+
+const handleUpdateProduct = async () => {
+  try {
+
+    await updateProduct(
+      editingProduct.id,
+      {
+        name: editingProduct.name,
+        price: editingProduct.price,
+        description:
+          editingProduct.description,
+      }
+    );
+
+    toast.success(
+      "Produk berhasil diperbarui"
+    );
+
+    setEditingProduct(null);
+
+    fetchProducts();
+
+  } catch (error) {
+
+    console.log(error);
+
+    toast.error(
+      "Gagal mengupdate produk"
+    );
+
+  }
+};
+
 const handleDeleteProduct = async (id) => {
 
   const confirmDelete = window.confirm(
