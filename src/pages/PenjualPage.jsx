@@ -1323,40 +1323,14 @@ transition duration-300
 
 <div className="flex gap-3 mt-5">
 
-<div className="flex gap-3 mt-5">
-
-  <button
-    onClick={() => {
-      alert("EDIT DIKLIK");
-      console.log("EDIT DIKLIK");
-    }}
-    style={{
-      position: "relative",
-      zIndex: 9999,
-      background: "blue",
-      color: "white",
-      padding: "12px",
-      borderRadius: "12px"
-    }}
-  >
-    TEST EDIT
-  </button>
-
-  <button
-    onClick={() => handleDeleteProduct(product.id)}
-    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
-  >
-    Hapus Produk
-  </button>
-
-</div>
-
-  <button
-    onClick={() => handleDeleteProduct(product.id)}
-    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
-  >
-    Hapus Produk
-  </button>
+ <button
+  onClick={() => {
+    alert("EDIT DIKLIK");
+    setEditingProduct(product);
+  }}
+>
+  Edit Produk
+</button>
 
 </div>
 
@@ -1427,11 +1401,14 @@ transition duration-300
 
 <div className="flex gap-3 mt-5">
 
- <button
+  <button
   onClick={() => {
-    alert("EDIT DIKLIK");
+    console.log("EDIT DIKLIK");
+    console.log(product);
+
     setEditingProduct(product);
   }}
+  className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-2xl font-semibold"
 >
   Edit Produk
 </button>
