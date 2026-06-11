@@ -1327,10 +1327,13 @@ transition duration-300
 <div className="flex gap-3 mt-5">
 
  <button
-  onClick={() => {
-    alert("EDIT DIKLIK");
+  onClick={(e) => {
+    e.preventDefault();
+    console.log("TOMBOL EDIT DIKLIK");
+    alert("TOMBOL EDIT DIKLIK");
     setEditingProduct(product);
   }}
+  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-2xl font-semibold"
 >
   Edit Produk
 </button>
