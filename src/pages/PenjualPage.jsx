@@ -1219,15 +1219,26 @@ transition duration-300
               </p>
 
               <p className="text-gray-500 mt-3">
-                {product.description}
-              </p>
+  {product.description}
+</p>
 
-              <button
-                onClick={() => handleDeleteProduct(product.id)}
-                className="w-full mt-5 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
-              >
-                Hapus Produk
-              </button>
+<div className="flex gap-3 mt-5">
+
+  <button
+    onClick={() => setEditingProduct(product)}
+    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-2xl font-semibold"
+  >
+    Edit Produk
+  </button>
+
+  <button
+    onClick={() => handleDeleteProduct(product.id)}
+    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
+  >
+    Hapus Produk
+  </button>
+
+</div>
 
             </div>
 
@@ -1291,15 +1302,26 @@ transition duration-300
               </p>
 
               <p className="text-gray-500 mt-3">
-                {product.description}
-              </p>
+  {product.description}
+</p>
 
-              <button
-                onClick={() => handleDeleteProduct(product.id)}
-                className="w-full mt-5 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
-              >
-                Hapus Produk
-              </button>
+<div className="flex gap-3 mt-5">
+
+  <button
+    onClick={() => setEditingProduct(product)}
+    className="flex-1 bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-2xl font-semibold"
+  >
+    Edit Produk
+  </button>
+
+  <button
+    onClick={() => handleDeleteProduct(product.id)}
+    className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-2xl font-semibold"
+  >
+    Hapus Produk
+  </button>
+
+</div>
 
             </div>
 
