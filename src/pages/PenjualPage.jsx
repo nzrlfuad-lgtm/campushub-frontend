@@ -574,7 +574,7 @@ const printProducts = myProducts.filter(
 const jastipProducts = myProducts.filter(
   (product) => product.type === "jastip"
 );
-
+const [editingProduct, setEditingProduct] = useState(null);
 const handleDeleteProduct = async (id) => {
 
   const confirmDelete = window.confirm(
