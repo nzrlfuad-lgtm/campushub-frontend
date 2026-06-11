@@ -28,7 +28,8 @@ import {
 } from "recharts";
 
 function Dashboard() {
-
+  console.log("PENJUAL PAGE LOADED");
+  
   const user = JSON.parse(
   localStorage.getItem("user")
 ) || {};
