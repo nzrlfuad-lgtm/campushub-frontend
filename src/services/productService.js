@@ -36,8 +36,9 @@ export const deleteProduct =
       );
 
     return response.data;
+}; 
 
-    export const updateProduct =
+export const updateProduct =
   async (id, data) => {
 
     const response =
@@ -47,6 +48,4 @@ export const deleteProduct =
       );
 
     return response.data;
-};
-
 };
